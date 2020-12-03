@@ -1,20 +1,44 @@
 
 var pasoR;
 var pasoL;
-
+var id;
 var block = 1;
 
 $(function () {
+  var cadena;
+  let re = new RegExp('^[a|b]+$')
   dibujarGrafo(0);
   $("#iniciar").click(function () {
 
-    dibujarGrafo(1);
-    if (block == 1) {
+    var str = document.getElementById('entrada').value
+    console.log(str);
+
+    if (!re.test(str)) {
+      alert('no valida')
+      return
+    }
+    else {
+      dibujarGrafo(1);
       block = 0;
-      completarPreliminares();
+      cadena = completarPreliminares();
 
     }
+
   });
+
+  $("#correr").click(function () {
+    if (block == 0) {
+      block = 1;
+      recorrerDerecha(0, contarArreglo(cadena));
+    }
+  });
+  $("#paso").click(function () {
+    if (block == 0 || block == 2) {
+      block = 2;
+      recorrerPaso(contarArreglo(cadena));
+    }
+  });
+
 });
 
 function dibujarGrafo(num) {
@@ -129,14 +153,8 @@ function completarPreliminares() {
   pasoR = 1;
   dibujarCinta(arreglo);
   animarCinta();
-  $("#correr").click(function () {
-    recorrerDerecha(0, contarArreglo(arreglo));
-  });
-  $("#paso").click(function () {
-    recorrerPaso(contarArreglo(arreglo));
-  });
-
-
+  block = 0;
+  return arreglo;
 }
 
 function recorrerPaso(tam) {
@@ -145,13 +163,13 @@ function recorrerPaso(tam) {
 
     console.log("iteracion" + pasoR);
 
-    setTimeout(function () {
+    id = setTimeout(function () {
       anime({
         targets: '#elemento' + (pasoR - 1),
         backgroundColor: '#b9b3f5',
       });
     }, 100);
-    setTimeout(function () {
+    id = setTimeout(function () {
       anime({
         targets: '#elemento' + pasoR,
         backgroundColor: '#3f51b5',
@@ -173,7 +191,7 @@ function recorrerPaso(tam) {
 
   }
   else if (pasoL == -1) {
-    setTimeout(function () {
+    id = setTimeout(function () {
       dibujarGrafo(6);
       anime({
         targets: '#elemento' + 0,
@@ -181,23 +199,24 @@ function recorrerPaso(tam) {
       });
 
     }, 100);
-    setTimeout(function () {
+    id = setTimeout(function () {
       anime({
         targets: '#elemento' + 1,
         backgroundColor: '#3f51b5',
       });
 
     }, 500);
+    block = 0;
   }
   else {
     console.log("iteracionL" + pasoL);
-    setTimeout(function () {
+    id = setTimeout(function () {
       anime({
         targets: '#elemento' + (pasoL + 1),
         backgroundColor: '#b9b3f5',
       });
     }, 100);
-    setTimeout(function () {
+    id = setTimeout(function () {
       dibujarGrafo(5);
       anime({
         targets: '#elemento' + pasoL,
@@ -218,14 +237,14 @@ function recorrerDerecha(i, tam) {
   if (i < tam) {
 
     console.log("iteracionf" + i);
-    setTimeout(function () {
+    id = setTimeout(function () {
       anime({
         targets: '#elemento' + (i - 1),
         backgroundColor: '#b9b3f5',
       });
 
     }, (i * delay) + 100);
-    setTimeout(function () {
+    id = setTimeout(function () {
 
       if ($('#elemento' + i).text() == "a") {
         $('#elemento' + i).text("a");
@@ -251,13 +270,13 @@ function recorrerDerecha(i, tam) {
 function leerVacioDerecha(i) {
   console.log(i);
   let delay = 3000 - $("#myRange").val();
-  setTimeout(function () {
+  id = setTimeout(function () {
     anime({
       targets: '#elemento' + (i),
       backgroundColor: '#b9b3f5',
     });
   }, (i * delay) + 100);
-  setTimeout(function () {
+  id = setTimeout(function () {
     dibujarGrafo(2);
     anime({
       targets: '#elemento' + (i + 1),
@@ -275,14 +294,14 @@ function recorrerIzquierda(i, j) {
   console.log(i, j);
   if (i > 1) {
     console.log("iteracion" + (i + 1));
-    setTimeout(function () {
+    id = setTimeout(function () {
       dibujarGrafo(5);
       anime({
         targets: '#elemento' + (i + 1),
         backgroundColor: '#b9b3f5',
       });
     }, (j * delay1) + 100);
-    setTimeout(function () {
+    id = setTimeout(function () {
       anime({
         targets: '#elemento' + (i),
         backgroundColor: '#3f51b5',
@@ -301,14 +320,14 @@ function recorrerIzquierda(i, j) {
 
 function leerVacioIzquierda(i) {
   let delay2 = 3000 - $("#myRange").val();
-  setTimeout(function () {
+  id = setTimeout(function () {
     dibujarGrafo(3);
     anime({
       targets: '#elemento1',
       backgroundColor: '#b9b3f5',
     });
   }, (i * delay2) + 100);
-  setTimeout(function () {
+  id = setTimeout(function () {
     anime({
       targets: '#elemento0',
       backgroundColor: '#3f51b5',
@@ -316,18 +335,19 @@ function leerVacioIzquierda(i) {
   }, (i * delay2) + 500);
 
   i++;
-  setTimeout(function () {
+  id = setTimeout(function () {
     anime({
       targets: '#elemento0',
       backgroundColor: '#b9b3f5',
     });
   }, (i * delay2) + 100);
-  setTimeout(function () {
+  id = setTimeout(function () {
     dibujarGrafo(6);
     anime({
       targets: '#elemento1',
       backgroundColor: '#3f51b5',
     });
+    block = 0;
   }, (i * delay2) + 500);
 
 }
