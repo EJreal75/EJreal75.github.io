@@ -186,7 +186,7 @@ function recorrerPaso(tam) {
         dibujarGrafo(2);
       }
       pasoR++;
-    }, 500);
+    }, 200);
 
 
   }
@@ -205,7 +205,7 @@ function recorrerPaso(tam) {
         backgroundColor: '#3f51b5',
       });
 
-    }, 500);
+    }, 200);
     block = 0;
   }
   else {
@@ -226,7 +226,7 @@ function recorrerPaso(tam) {
         dibujarGrafo(3);
       }
       pasoL--;
-    }, 500);
+    }, 200);
 
   }
 
