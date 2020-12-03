@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <title>Network</title>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+</head>
+
+<body>
+  <div>
+    <h1 class="text-center">
+      <strong id="etiqueta">Maquina de turing</strong>
+    </h1>
+    <center>
+      <div class="d-block">
+        <div class="col-6 my-3">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Ingrese su cadena" id="entrada">
+            <span class="input-group-btn">
+              <button class="btn btn-outline-dark" type="button" id="iniciar" 
+                data-content="La cadena está vacía." data-placemente="right" data-trigger="focus">Cargar</button>
+            </span>
+          </div>
+        </div>
+        <div class="col-3 my-3">
+
+          <div class="slidecontainer">
+            Velocidad:<br>
+            <input type="range" min="0" max="3000" value="1500" step="100" class="slider" id="myRange">
+            <p></p>
+          </div>
+          <div class="btn-group" role="group" aria-label="Funciones">
+            <button class="btn btn-outline-dark" id="paso" content="1">Paso a paso</button>
+            <button class="btn btn-outline-dark" id="correr" content="1">Iniciar</button>
+          </div>
+
+        </div>
+
+      </div>
+  </div>
+  </center>
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1" role="tabpanel">
+      <center>
+        <div id="mynetwork"></div>
+        <div class="col-6 row" id="carrete"></div>
+      </center>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+    integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+    integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js.js"></script>
+</body>
+
+</html>

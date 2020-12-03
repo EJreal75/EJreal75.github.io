@@ -1,0 +1,55 @@
+.circulo {
+    background-color: #b9b3f5;
+    border: 2px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+body {
+    background-image: url("henry.jpg");
+}
+
+#nodes1 {
+    background-color: aqua;
+}
+
+.rango {
+    float: right;
+    margin-right: 1360px;
+    margin-top: 10px;
+}
+
+#entrada {
+    color: black;
+    background-image: linear-gradient(0deg, #99a8b2 2px, rgba(0, 150, 136, 0) 0), linear-gradient(0deg, rgba(0, 0, 0, .26) 1px, transparent 0)
+}
+
+#iniciar {
+    background-color: #99a8b2;
+    color: black;
+}
+
+#info {
+    background-color: #1f6f8b;
+    color: black;
+}
+
+#paso {
+    background-color: #1f6f8b;
+    color: black;
+}
+
+#correr {
+    background-color: #99a8b2;
+    color: black;
+}
+
+#mynetwork {
+    width: 800px;
+    height: 300px;
+    border: 1px solid lightgray;
+}
+
+
