@@ -6,9 +6,12 @@
     border-radius: 100%;
     text-align: center;
 }
+#entrada::placeholder {
+    color:black;
+  }
 
 body {
-    background-image: url("henry.jpg");
+    background-image: url("jeremy-vitry-clanbg-wolf.jpg");
 }
 
 #nodes1 {
