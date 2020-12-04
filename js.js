@@ -234,7 +234,7 @@ function recorrerPaso(tam) {
 }
 
 function recorrerDerecha(i, tam) {
-  let delay = 3000 - $("#myRange").val();
+  let delay = 3100 - $("#myRange").val();
   if (i < tam) {
 
     console.log("iteracionf" + i);
@@ -270,7 +270,7 @@ function recorrerDerecha(i, tam) {
 
 function leerVacioDerecha(i) {
   console.log(i);
-  let delay = 3000 - $("#myRange").val();
+  let delay = 3100 - $("#myRange").val();
   id = setTimeout(function () {
     anime({
       targets: '#elemento' + (i),
@@ -291,7 +291,7 @@ function leerVacioDerecha(i) {
 }
 
 function recorrerIzquierda(i, j) {
-  let delay1 = 3000 - $("#myRange").val();
+  let delay1 = 3100 - $("#myRange").val();
   console.log(i, j);
   if (i > 1) {
     console.log("iteracion" + (i + 1));
@@ -320,15 +320,15 @@ function recorrerIzquierda(i, j) {
 
 
 function leerVacioIzquierda(i) {
-  let delay2 = 3000 - $("#myRange").val();
+  let delay2 = 3100 - $("#myRange").val();
   id = setTimeout(function () {
-    dibujarGrafo(3);
     anime({
       targets: '#elemento1',
       backgroundColor: '#b9b3f5',
     });
   }, (i * delay2) + 100);
   id = setTimeout(function () {
+    dibujarGrafo(3);
     anime({
       targets: '#elemento0',
       backgroundColor: '#3f51b5',
