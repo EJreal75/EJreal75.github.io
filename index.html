@@ -17,7 +17,9 @@
 <body>
   <div>
     <h1 class="text-center">
+      <img src="Kling.gif">
       <strong id="etiqueta">Maquina de turing</strong>
+      <img src="Kling.gif">
     </h1>
     <center>
       <div class="d-block">
@@ -25,8 +27,10 @@
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Ingrese su cadena" id="entrada">
             <span class="input-group-btn">
-              <button class="btn btn-outline-dark" type="button" id="iniciar" 
-                data-content="La cadena está vacía." data-placemente="right" data-trigger="focus">Cargar</button>
+              <button class="btn btn-outline-dark" type="button" id="iniciar" data-content="La cadena está vacía."
+                data-placemente="right" data-trigger="focus">Cargar</button>
+              <button class="btn btn-outline-dark" id="info" data-toggle="modal"
+                data-target="#exampleModal"><strong>?</strong></button>
             </span>
           </div>
         </div>
@@ -54,6 +58,46 @@
         <div id="mynetwork"></div>
         <div class="col-6 row" id="carrete"></div>
       </center>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">
+            <h2>CAMBIAR B POR A</h2>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5>Detalles:</h5>
+          <p class="text-center">
+            Esta máquina analiza una cadena sobre {b,a} y cambia todas sus bes por aes
+          </p>
+
+          <h5>Como funciona:</h5>
+          <p class="text-center">
+            La cabeza inicia sobre el primer simbolo de la izquierda y debe terminar sobre este simbolo.
+          </p>
+          <h5>Ejemplo:</h5>
+          <p class="text-center">
+            Estado inicial:
+            <img src="Captura(1).png">
+            <br>
+            Estado final:
+            <img src="Captura(2).png">
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+
+      </div>
     </div>
   </div>
 

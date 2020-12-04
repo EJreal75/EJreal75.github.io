@@ -14,7 +14,7 @@ $(function () {
     console.log(str);
 
     if (!re.test(str)) {
-      alert('no valida')
+      alert('Ingrese aes o bes minusculas')
       return
     }
     else {
@@ -26,6 +26,7 @@ $(function () {
 
   });
 
+  
   $("#correr").click(function () {
     if (block == 0) {
       block = 1;
