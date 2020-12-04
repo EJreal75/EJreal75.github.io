@@ -296,13 +296,14 @@ function recorrerIzquierda(i, j) {
   if (i > 1) {
     console.log("iteracion" + (i + 1));
     id = setTimeout(function () {
-      dibujarGrafo(5);
+      
       anime({
         targets: '#elemento' + (i + 1),
         backgroundColor: '#b9b3f5',
       });
     }, (j * delay1) + 100);
     id = setTimeout(function () {
+      dibujarGrafo(5);
       anime({
         targets: '#elemento' + (i),
         backgroundColor: '#3f51b5',
